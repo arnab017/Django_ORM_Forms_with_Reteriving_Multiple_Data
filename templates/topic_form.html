@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Form</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        form{
+            margin: 180px auto 0 auto;
+            background-image: linear-gradient(
+            180deg,
+            hsl(278deg 67% 51%) 1%,
+            hsl(275deg 100% 30%) 50%,
+            hsl(0deg 0% 0%) 99%
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34%;
+            height: 37vh;
+            font-size: 2em;
+            flex-direction: column;
+            box-shadow: -20px 20px 60px black;
+            transition: 1s;
+        }
+        form:hover{
+            box-shadow: 24px 39px 60px black;
+        }
+        td{
+            padding-top: 20px;
+        }
+        input[type='text']{
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 30px;
+            border: none;
+            width: 55%;
+        }
+        input[type='submit']{
+            padding: 10px;
+            margin-top: 0px;
+            border-radius: 20px;
+            border: none;
+            width: 100px;
+            font-size: 0.5em;
+        }
+        .box{
+            position: absolute;
+            font-size: 5.67em;
+            left: 451px;
+            top: 45px;
+            z-index: -1;
+            color: rgba(128, 128, 128, 0.429);
+        }
+        label{
+            color: white;
+        }
+        input:focus{
+            outline: none;
+        }
+        input[type="text"],
+        input[type="submit"]{
+            transition: .5s;
+        }
+        input[type="text"]:hover{
+            box-shadow: -10px 10px 20px black;
+        }
+        input[type="submit"]:hover{
+            background-color: rgb(157, 81, 243);
+            box-shadow: -10px 10px 20px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>TOPIC</h1>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <label for="tp">INPUT TOPIC NAME</label>
+                <input type="text" id="tp" name="tp">
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

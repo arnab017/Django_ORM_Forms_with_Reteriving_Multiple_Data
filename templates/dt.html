@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topics Display</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(83,9,121,1) 54%, rgba(207,0,255,1) 100%);
+        }
+        h1{
+            background-color: black;
+            color: white;
+            font-size: 2em;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        table{
+            width: 20%;
+            box-shadow: -37px 42px 74px black;
+            text-align: center;
+        }
+        th{
+            background-color: lightgreen;
+            font-size: 1.5em;
+        }
+        td{
+            background-color: lightsteelblue;
+            border-top: 1px solid;
+            transition: .5s;
+        }
+        td:hover{
+            background-color: lightgreen;
+            transform: translate(10px,0px);
+            box-shadow: 5px 0px 20px black;
+            border: 0;
+        }
+        th,td{
+            padding: 10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Displaying Topics Table</h1>
+
+        <table cellspacing="0">
+            <tr>
+                <th>Topic name</th>
+            </tr>
+            {% for to in topics %}
+                <tr>
+                    <td>{{ to.topic_name }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
